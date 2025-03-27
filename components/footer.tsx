@@ -9,12 +9,12 @@ function Footer() {
     <div className="flex flex-col justify-between items-center px-16 py-6 bg-[#111828] text-white">
       <div className="flex flex-col items-center justify-center gap-12">
         {/* Above Content */}
-        <div className="grid sm:grid-cols-1 md:grid-cols-4 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-16">
           <div className="flex flex-col gap-4 md:gap-2 sm:items-center md:items-start">
             <h1 className="font-bold text-3xl md:text-xl lg:text-2xl text-center">
               ShopeMe
             </h1>
-            <p className="opacity-50 text-center text-xl   md:text-md lg:text-lg font-light md:text-start">
+            <p className="opacity-50 text-center text-xl sm:text-sm md:text-lg font-light md:text-start">
               Your destination for minimalist design products.
             </p>
           </div>
@@ -26,19 +26,19 @@ function Footer() {
             <div className="flex flex-col gap-1">
               <Link
                 href=""
-                className="opacity-50 text-center text-xl   md:text-md lg:text-lg font-light md:text-start"
+                className="opacity-50 text-center text-xl sm:text-sm md:text-lg font-light md:text-start"
               >
                 Home
               </Link>
               <Link
                 href=""
-                className="opacity-50 text-center text-xl   md:text-md lg:text-lg font-light md:text-start"
+                className="opacity-50 text-center text-xl sm:text-sm md:text-lg font-light md:text-start"
               >
                 products
               </Link>
               <Link
                 href=""
-                className="opacity-50 text-center text-xl   md:text-md lg:text-lg font-light md:text-start"
+                className="opacity-50 text-center text-xl sm:text-sm md:text-lg font-light md:text-start"
               >
                 About
               </Link>
@@ -50,11 +50,13 @@ function Footer() {
               Contact
             </h1>
             <div className="flex flex-col gap-1">
-              <p className="opacity-50 text-center text-xl   md:text-md lg:text-lg font-light md:text-start">
-                Email: ShopMe@gmail.com
+              <p className="opacity-50 text-center text-xl sm:text-sm lg:text-lg font-light md:text-start">
+                Email: <br />
+                ShopMe@gmail.com
               </p>
-              <p className="opacity-50 text-center text-xl   md:text-md lg:text-lg font-light md:text-start">
-                Phone: (555) 123-456789
+              <p className="opacity-50 text-center text-xl sm:text-sm lg:text-lg font-light md:text-start">
+                Phone: <br />
+                (555) 123-456789
               </p>
             </div>
           </div>
@@ -65,12 +67,12 @@ function Footer() {
             </h1>
             <div className="flex gap-6 md:gap-2 items-center justify-center">
               <InstagramIcon
-                sx={{ opacity: 0.5, fontSize: { xs: 48, md: 32 } }}
+                sx={{ opacity: 0.5, fontSize: { xs: 36, lg: 40 } }}
               />
               <FacebookIcon
-                sx={{ opacity: 0.5, fontSize: { xs: 48, md: 32 } }}
+                sx={{ opacity: 0.5, fontSize: { xs: 36, lg: 40 } }}
               />
-              <XIcon sx={{ opacity: 0.5, fontSize: { xs: 48, md: 32 } }} />
+              <XIcon sx={{ opacity: 0.5, fontSize: { xs: 36, lg: 40 } }} />
             </div>
           </div>
         </div>

@@ -13,7 +13,7 @@ const Navbar = () => {
   const [openSearch, setOpenSearch] = useState<boolean>(false);
 
   return (
-    <div className="flex justify-between items-center px-16 py-6 bg-white shadow-md">
+    <div className="flex justify-between items-center px-8 md:px-16 py-6 bg-white shadow-md">
       {/* Title */}
       <Box>
         <h1 className="title">ShopME</h1>
@@ -55,7 +55,7 @@ const Navbar = () => {
       {/* burger bar */}
       <div className="lg:hidden" onClick={() => setOpenMenu(!openMenu)}>
         <Box>
-          <MenuIcon />
+          <MenuIcon sx={{fontSize: 32}}/>
         </Box>
       </div>
 
