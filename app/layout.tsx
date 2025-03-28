@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={poppins.className}>
-      <body className={`antialiased`}>
+      <body className={`flex flex-col min-h-screen w-full text-[#111828]`}>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <Navbar />

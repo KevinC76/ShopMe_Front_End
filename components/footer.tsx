@@ -6,7 +6,7 @@ import XIcon from '@mui/icons-material/X';
 
 function Footer() {
   return (
-    <div className="flex flex-col justify-between items-center px-16 py-6 bg-[#111828] text-white">
+    <div className="flex flex-col justify-between items-center px-16 py-3 bg-[#111828] text-white">
       <div className="flex flex-col items-center justify-center gap-12">
         {/* Above Content */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-16">
