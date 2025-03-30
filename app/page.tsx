@@ -44,7 +44,7 @@ export default function Home() {
         {/* products */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:flex justify-between items-center pt-8 gap-4">
           {/* Product Card 1 */}
-          <div className="w-full md:w-[425px]">
+          <div className="w-full lg:w-[425px]">
             <ProductsCard
               imageUrl="/hero_banner.jpg"
               productName="Test Product"
@@ -54,7 +54,7 @@ export default function Home() {
           </div>
 
           {/* Product Card 2 */}
-          <div className="w-full md:w-[425px]">
+          <div className="w-full lg:w-[425px]">
             <ProductsCard
               imageUrl="/hero_banner.jpg"
               productName="Test Product"
@@ -64,7 +64,7 @@ export default function Home() {
           </div>
 
           {/* Product Card 3 */}
-          <div className="w-full md:w-[425px] ">
+          <div className="w-full lg:w-[425px] ">
             <ProductsCard
               imageUrl="/hero_banner.jpg"
               productName="Test Product"
@@ -74,7 +74,7 @@ export default function Home() {
           </div>
 
           {/* Product Card 4 */}
-          <div className="w-full md:w-[425px] ">
+          <div className="w-full lg:w-[425px] ">
             <ProductsCard
               imageUrl="/hero_banner.jpg"
               productName="Test Product"

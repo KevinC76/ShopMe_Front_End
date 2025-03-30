@@ -6,6 +6,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
+import Menu_Navbar from './menu_navbar';
 
 const Navbar = () => {
   const [login, setLogin] = useState<boolean>(false);
@@ -13,7 +14,7 @@ const Navbar = () => {
   const [openSearch, setOpenSearch] = useState<boolean>(false);
 
   return (
-    <div className="flex justify-between items-center px-8 md:px-16 py-3 bg-white shadow-md">
+    <div className="flex justify-between items-center px-8 md:px-16 py-3 bg-white z-10 shadow-md">
       {/* Title */}
       <Box>
         <Link href="/">
@@ -63,7 +64,8 @@ const Navbar = () => {
         </Box>
       </div>
 
-      {/* perlu buat menu ketika hamburger di click. */}
+      
+      <Menu_Navbar openMenu={openMenu} login={login}/>
     </div>
   );
 };
