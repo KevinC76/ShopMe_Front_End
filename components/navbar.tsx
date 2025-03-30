@@ -16,7 +16,9 @@ const Navbar = () => {
     <div className="flex justify-between items-center px-8 md:px-16 py-3 bg-white shadow-md">
       {/* Title */}
       <Box>
-        <h1 className="title">ShopME</h1>
+        <Link href="/">
+          <h1 className="title">ShopME</h1>
+        </Link>
       </Box>
 
       {/* Right Item */}
@@ -46,7 +48,9 @@ const Navbar = () => {
                   <AccountCircleIcon />
                 </li>
               ) : (
-                <Button variant="contained">Login</Button>
+                <Button variant="contained" href="/login">
+                  Login
+                </Button>
               )}
             </ul>
           </Box>
@@ -55,7 +59,7 @@ const Navbar = () => {
       {/* burger bar */}
       <div className="lg:hidden" onClick={() => setOpenMenu(!openMenu)}>
         <Box>
-          <MenuIcon sx={{fontSize: 32}}/>
+          <MenuIcon sx={{ fontSize: 32 }} />
         </Box>
       </div>
 
