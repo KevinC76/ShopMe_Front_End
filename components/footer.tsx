@@ -25,13 +25,13 @@ function Footer() {
             </h1>
             <div className="flex flex-col gap-1">
               <Link
-                href=""
+                href="/"
                 className="opacity-50 text-center text-xl sm:text-sm md:text-lg font-light md:text-start"
               >
                 Home
               </Link>
               <Link
-                href=""
+                href="/products"
                 className="opacity-50 text-center text-xl sm:text-sm md:text-lg font-light md:text-start"
               >
                 products

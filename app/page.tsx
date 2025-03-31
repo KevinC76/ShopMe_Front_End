@@ -21,7 +21,11 @@ export default function Home() {
             <Button
               color="primary"
               variant="contained"
-              sx={{ paddingX: {xs: 2, sm:4}, paddingY: {xs: 1, sm:2}, fontSize: 14 }}
+              sx={{
+                paddingX: { xs: 2, sm: 4 },
+                paddingY: { xs: 1, sm: 2 },
+                fontSize: 14,
+              }}
             >
               Shop Now
             </Button>
@@ -40,9 +44,11 @@ export default function Home() {
       </div>
       {/* Bottom */}
       <div className="flex-1 px-8 sm:px-16 pt-8 xl:pt-36 pb-16 bg-white  ">
-        <h1 className="font-bold text-2xl text-center sm:text-start sm:text-4xl">Feature Products</h1>
+        <h1 className="font-bold text-2xl text-center sm:text-start sm:text-4xl text-[#2563ea]">
+          Feature Products
+        </h1>
         {/* products */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:flex justify-between items-center pt-8 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:flex justify-between items-center pt-4 xl:pt-8 gap-4">
           {/* Product Card 1 */}
           <div className="w-full lg:w-[425px]">
             <ProductsCard
