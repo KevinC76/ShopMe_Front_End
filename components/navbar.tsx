@@ -15,7 +15,7 @@ const Navbar = () => {
   const [openSearch, setOpenSearch] = useState<boolean>(false);
 
   return (
-    <div className="flex justify-between items-center px-8 md:px-16 py-3 bg-white z-10 shadow-md sticky top-0">
+    <div className="flex justify-between items-center px-8 md:px-16 py-3 bg-white z-10 shadow-md sticky lg:static top-0">
       {/* Title */}
       <Box>
         <Link href="/">
