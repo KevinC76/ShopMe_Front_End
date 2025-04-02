@@ -2,7 +2,6 @@
 
 import { Box, Button } from '@mui/material';
 import React, { useState } from 'react';
-import SearchIcon from '@mui/icons-material/Search';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -12,7 +11,6 @@ import Menu_Navbar from './menu_navbar';
 const Navbar = () => {
   const [login, setLogin] = useState<boolean>(false);
   const [openMenu, setOpenMenu] = useState<boolean>(false);
-  const [openSearch, setOpenSearch] = useState<boolean>(false);
 
   return (
     <div className="flex justify-between items-center px-8 md:px-16 py-3 bg-white z-10 shadow-md sticky lg:static top-0">
@@ -42,9 +40,6 @@ const Navbar = () => {
           {/* Icons */}
           <Box>
             <ul className="flex gap-4 items-center justify-center navContent">
-              <li onClick={() => setOpenSearch(!openSearch)}>
-                <SearchIcon />
-              </li>
               {login ? (
                 <li>
                   <AccountCircleIcon />

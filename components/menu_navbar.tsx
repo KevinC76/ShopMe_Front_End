@@ -32,12 +32,6 @@ function Menu_Navbar({ openMenu, login, setOpenMenu }: Menu_NavbarProps) {
     >
       <div
         className="bg-white w-full text-center p-3 transition-all duration-300 ease-in-out hover:bg-gray-100"
-        onClick={() => console.log('search')}
-      >
-        <h1>Search</h1>
-      </div>
-      <div
-        className="bg-white w-full text-center p-3 transition-all duration-300 ease-in-out hover:bg-gray-100"
         onClick={() => navigate('Home')}
       >
         <Link
