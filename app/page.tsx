@@ -3,6 +3,7 @@
 import ProductsCard from '@/components/card';
 import { Button } from '@mui/material';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -18,17 +19,19 @@ export default function Home() {
             Discover our curated collection of minimalist products.
           </p>
           <div>
-            <Button
-              color="primary"
-              variant="contained"
-              sx={{
-                paddingX: { xs: 2, sm: 4 },
-                paddingY: { xs: 1, sm: 2 },
-                fontSize: 14,
-              }}
-            >
-              Shop Now
-            </Button>
+            <Link href='/products'>
+              <Button
+                color="primary"
+                variant="contained"
+                sx={{
+                  paddingX: { xs: 2, sm: 4 },
+                  paddingY: { xs: 1, sm: 2 },
+                  fontSize: 14,
+                }}
+              >
+                Shop Now
+              </Button>
+            </Link>
           </div>
         </div>
         {/* right */}
