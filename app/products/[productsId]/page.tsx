@@ -1,12 +1,24 @@
+'use client';
+
 import { Button } from '@mui/material';
 import Image from 'next/image';
+import { useParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { getProductById } from './actions';
 
-async function Page_Detail({
-  params,
-}: {
-  params: Promise<{ productsId: string }>;
-}) {
-  const productsId = (await params).productsId;
+function Page_Detail() {
+  const params = useParams();
+  const [product, setProduct] = useState<any>({});
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      setProduct(await getProductById(String(params.productsId)));
+    };
+
+    fetchProduct();
+  }, [params]);
+
+  console.log(product);
 
   return (
     <div className="flex-1 p-8 sm:p-16">
@@ -26,8 +38,13 @@ async function Page_Detail({
         <div className="flex flex-col justify-start gap-4">
           {/* top */}
           <div className="flex flex-col gap-4">
-            <h1 className="text-2xl sm:text-4xl font-bold">Nama Products {productsId}</h1>
-            <p className="text-lg sm:text-2xl text-[#2563ea]">Rp 1.000.000</p>
+            <h1 className="text-2xl sm:text-4xl font-bold">{product.name}</h1>
+            <p className="text-lg sm:text-2xl text-[#2563ea]">
+              {new Intl.NumberFormat('id-US', {
+                style: 'currency',
+                currency: 'IDR',
+              }).format(product.price)}
+            </p>
             <div className="flex gap-4">
               <Button variant="contained">Buy Now</Button>
               <Button variant="outlined">Add to Chart</Button>
@@ -38,17 +55,7 @@ async function Page_Detail({
           <div className="flex flex-col gap-2 sm:gap-4 xl:w-[1000px]">
             <h1 className="font-bold text-xl">Detail Products</h1>
             <div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
-                iste recusandae ipsum necessitatibus minima maiores, quos
-                doloribus aspernatur facilis quis nisi, aut inventore! Est
-                perspiciatis numquam a, accusantium rem enim. Lorem ipsum dolor
-                sit amet, consectetur adipisicing elit. Velit architecto
-                corporis ipsum incidunt, harum natus at voluptatibus ratione
-                vero reprehenderit. Nesciunt fugiat ducimus laboriosam culpa
-                aperiam reiciendis quam, facilis vitae, tenetur accusamus odit
-                deleniti ab atque.
-              </p>
+              <p>{product.description}</p>
             </div>
           </div>
         </div>

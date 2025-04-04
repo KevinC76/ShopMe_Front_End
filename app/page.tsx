@@ -53,6 +53,7 @@ export default function Home() {
           <div className="w-full lg:w-[425px]">
             <ProductsCard
               imageUrl="/hero_banner.jpg"
+              id="67e00af3acce0a5e0866f3be"
               productName="Test Product"
               productDescription="try our finest product"
               price={100000}
@@ -63,6 +64,7 @@ export default function Home() {
           <div className="w-full lg:w-[425px]">
             <ProductsCard
               imageUrl="/hero_banner.jpg"
+              id="67e00af3acce0a5e0866f3be"
               productName="Test Product"
               productDescription="try our finest product"
               price={100000}
@@ -73,6 +75,7 @@ export default function Home() {
           <div className="w-full lg:w-[425px] ">
             <ProductsCard
               imageUrl="/hero_banner.jpg"
+              id="67e00af3acce0a5e0866f3be"
               productName="Test Product"
               productDescription="try our finest product"
               price={100000}
@@ -83,6 +86,7 @@ export default function Home() {
           <div className="w-full lg:w-[425px] ">
             <ProductsCard
               imageUrl="/hero_banner.jpg"
+              id="67e00af3acce0a5e0866f3be"
               productName="Test Product"
               productDescription="try our finest product"
               price={100000}

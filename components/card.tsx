@@ -1,9 +1,11 @@
 'use client';
 
 import { Card, CardContent, CardMedia, Typography } from '@mui/material';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 
 type productsCardType = {
+  id: string
   imageUrl: string;
   productName: string;
   productDescription: string;
@@ -11,13 +13,16 @@ type productsCardType = {
 };
 
 function ProductsCard({
+  id,
   imageUrl,
   productName,
   productDescription,
   price,
 }: productsCardType) {
+  const router = useRouter();
+
   const navigate = () => {
-    console.log('test');
+    router.push(`/products/${id}`); 
   };
 
   return (

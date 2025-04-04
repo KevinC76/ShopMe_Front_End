@@ -28,7 +28,8 @@ function Products() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {products.map((product) => (
             <ProductsCard
-              key={product.id}
+              key={product._id}
+              id={product._id}
               imageUrl="/hero_banner.jpg"
               productName={product.name}
               productDescription={product.description}
