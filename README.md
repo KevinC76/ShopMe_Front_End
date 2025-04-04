@@ -1,4 +1,4 @@
-My First Full-Stack MERN Project
+#My First Full-Stack MERN Project
 This project is my first full-stack application built using the MERN stack (MongoDB, Express, React, and Node.js). While it’s far from perfect, it has been an invaluable learning experience.
 
 Through this project, I’ve explored and implemented several new concepts that I’ve always wanted to try, including:
