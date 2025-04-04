@@ -1,8 +1,21 @@
+'use client';
+
 import ProductsCard from '@/components/card';
 import Search_Bar from '@/components/search_bar';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { getProducts } from './actions';
 
 function Products() {
+  const [products, setProducts] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      setProducts(await getProducts());
+    };
+
+    fetchProducts();
+  }, []);
+
   return (
     <div className="flex-1">
       {/* container */}
@@ -13,46 +26,15 @@ function Products() {
         </div>
         {/* products list */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div>
+          {products.map((product) => (
             <ProductsCard
+              key={product.id}
               imageUrl="/hero_banner.jpg"
-              productName="Test Product"
-              productDescription="try our finest product"
-              price={100000}
+              productName={product.name}
+              productDescription={product.description}
+              price={product.price}
             />
-          </div>
-          <div>
-            <ProductsCard
-              imageUrl="/hero_banner.jpg"
-              productName="Test Product"
-              productDescription="try our finest product"
-              price={100000}
-            />
-          </div>
-          <div>
-            <ProductsCard
-              imageUrl="/hero_banner.jpg"
-              productName="Test Product"
-              productDescription="try our finest product"
-              price={100000}
-            />
-          </div>
-          <div>
-            <ProductsCard
-              imageUrl="/hero_banner.jpg"
-              productName="Test Product"
-              productDescription="try our finest product"
-              price={100000}
-            />
-          </div>
-          <div>
-            <ProductsCard
-              imageUrl="/hero_banner.jpg"
-              productName="Test Product"
-              productDescription="try our finest product"
-              price={100000}
-            />
-          </div>
+          ))}
         </div>
       </div>
     </div>

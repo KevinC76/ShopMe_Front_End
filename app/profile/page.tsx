@@ -9,7 +9,7 @@ import { getUserInformation } from './action';
 
 function Profile_Page() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [userData, setUserData] = useState<any>(null);
+  const [userData, setUserData] = useState<any>({});
 
   useEffect(() => {
     const fetch = async () => {
@@ -44,26 +44,8 @@ function Profile_Page() {
           </div>
         </div>
         <hr />
-        <div className="flex flex-col gap-4">
-          <div>
-            <Button variant="contained" onClick={() => setIsOpen(true)}>
-              add products
-            </Button>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
-            {[...Array(5)].map((_, index) => (
-              <ProductsCard
-                key={index}
-                imageUrl="/hero_banner.jpg"
-                productDescription="Tset"
-                productName={`Test Name ${index + 1}`}
-                price={1000000}
-              />
-            ))}
-          </div>
-        </div>
       </div>
-
+      
       <Dialog_form isOpen={isOpen} handleClose={() => setIsOpen(false)} />
     </>
   );
