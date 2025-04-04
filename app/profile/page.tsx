@@ -4,10 +4,23 @@ import ProductsCard from '@/components/card';
 import Dialog_form from '@/components/dialog_form';
 import { Button } from '@mui/material';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { getUserInformation } from './action';
 
 function Profile_Page() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [userData, setUserData] = useState<any>(null);
+
+  useEffect(() => {
+    const fetch = async () => {
+      const data = await getUserInformation();
+      setUserData(data);
+    };
+
+    fetch();
+  }, []);
+
+  console.log(userData);
 
   return (
     <>
@@ -23,18 +36,9 @@ function Profile_Page() {
               className="rounded-full md:w-[250px] md:h-[250px]"
             />
             <div className="flex flex-col gap-3 sm:gap-4 justify-center items-center sm:justify-start sm:items-start">
-              <h1 className="text-2xl font-bold">Kevin Chiputra</h1>
-              <p>Kevin@gmail.com</p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Possimus, neque! Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Ea voluptatum sint illo veniam, aspernatur
-                quos dolorum veritatis ab architecto asperiores? Esse eveniet
-                tenetur a. Quisquam similique provident eius atque fugiat
-                molestiae quam eos quaerat! Quos exercitationem quaerat, iste
-                quam maiores fuga, est ex odit voluptatibus animi officia
-                consequatur doloribus quisquam!
-              </p>
+              <h1 className="text-2xl font-bold">{userData.name}</h1>
+              <p>{userData.email}</p>
+              <p>{userData.address}</p>
               <div></div>
             </div>
           </div>

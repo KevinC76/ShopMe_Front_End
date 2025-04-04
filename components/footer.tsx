@@ -37,7 +37,7 @@ function Footer() {
                 products
               </Link>
               <Link
-                href=""
+                href="/about"
                 className="opacity-50 text-center text-xl sm:text-sm md:text-lg font-light md:text-start"
               >
                 About

@@ -50,15 +50,15 @@ const Navbar = () => {
           >
             <Link href="/">Home</Link>
             <Link href="/products">Products</Link>
-            <Link href="">About</Link>
+            <Link href="/about">About</Link>
           </Box>
           {/* Icons */}
           <Box>
             <ul className="flex gap-4 items-center justify-center navContent">
               {login ? (
-                <li>
+                <Link href="/profile">
                   <AccountCircleIcon />
-                </li>
+                </Link>
               ) : (
                 <Button variant="contained" href="/login">
                   Login
