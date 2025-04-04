@@ -1,9 +1,10 @@
+import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-export function middleware(req: NextRequest) {
-  const token =
-    req.cookies.get('token')?.value || req.headers.get('Authorization');
+export async function middleware(req: NextRequest) {
+  const cookiesStore = await cookies();
+  const token = cookiesStore.get('access_token')?.value;
   const pathname = req.nextUrl.pathname;
 
   console.log('Middleware active! Path:', pathname, 'Token:', token);

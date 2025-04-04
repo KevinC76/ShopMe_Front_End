@@ -1,16 +1,31 @@
 'use client';
 
 import { Box, Button } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
 import Menu_Navbar from './menu_navbar';
+import { getToken } from '@/utils/getToken';
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
   const [login, setLogin] = useState<boolean>(false);
   const [openMenu, setOpenMenu] = useState<boolean>(false);
+  const pathName = usePathname();
+
+  useEffect(() => {
+    const fetchToken = async () => {
+      const token = await getToken();
+      if (token) {
+        setLogin(true);
+      } else {
+        setLogin(false);
+      }
+    };
+    fetchToken();
+  }, [pathName]);
 
   return (
     <div className="flex justify-between items-center px-8 md:px-16 py-3 bg-white z-10 shadow-md sticky lg:static top-0">
