@@ -9,7 +9,11 @@ export async function middleware(req: NextRequest) {
 
   console.log('Middleware active! Path:', pathname, 'Token:', token);
 
-  if (!token) {
+  if (token && pathname === '/login') {
+    return NextResponse.redirect(new URL('/', req.url));
+  }
+
+  if (!token && pathname === '/profile') {
     console.log('No token found, redirecting...');
     return NextResponse.redirect(new URL('/login', req.url));
   }
@@ -18,5 +22,5 @@ export async function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/profile/:path*'], // Halaman yang dilindungi
+  matcher: ['/profile/:path*', '/login'], // Halaman yang dilindungi
 };
