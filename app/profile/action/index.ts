@@ -1,4 +1,5 @@
 'use server';
+
 import { cookies } from 'next/headers';
 
 export async function getUserInformation() {
@@ -22,5 +23,15 @@ export async function getUserInformation() {
   } catch (err) {
     console.error(err);
     throw new Error('Failed to fetch user information');
+  }
+}
+
+export async function logOut() {
+  try {
+    const cookiesStorage = await cookies();
+    cookiesStorage.delete('access_token');
+  } catch (err) {
+    console.error(err);
+    throw new Error('Failed to log out');
   }
 }

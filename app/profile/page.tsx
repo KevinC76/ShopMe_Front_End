@@ -1,14 +1,11 @@
 'use client';
 
-import ProductsCard from '@/components/card';
-import Dialog_form from '@/components/dialog_form';
 import { Button } from '@mui/material';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
-import { getUserInformation } from './action';
+import { getUserInformation, logOut } from './action';
 
 function Profile_Page() {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
   const [userData, setUserData] = useState<any>({});
 
   useEffect(() => {
@@ -20,7 +17,10 @@ function Profile_Page() {
     fetch();
   }, []);
 
-  console.log(userData);
+  const handleLogOut = async () => {
+    await logOut();
+    window.location.href = '/login';
+  };
 
   return (
     <>
@@ -44,9 +44,10 @@ function Profile_Page() {
           </div>
         </div>
         <hr />
+        <Button variant="contained" color="error" onClick={handleLogOut}>
+          Log Out
+        </Button>
       </div>
-      
-      <Dialog_form isOpen={isOpen} handleClose={() => setIsOpen(false)} />
     </>
   );
 }
